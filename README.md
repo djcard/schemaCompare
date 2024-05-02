@@ -6,7 +6,7 @@ Schema compare is a collection of tools designed to make the creation of migrati
 
 Note: The tool is highly MSSQL focussed given the circumstances surrounding its origin but adapting it to work with other databases is certainly possible. 
 
-## Key Element
+## Key Elements
 
 - Datasources: SchemaCompare has tools to create and manage datasources in Commandbox ( not web servers managed through CommandBox but CommandBox itself )
 - QBSettings: Many migrations run on QB. SchemaCompare eases the creation of settings which might be tricky on CommandBox such as grammars. 
@@ -18,18 +18,18 @@ Note: The tool is highly MSSQL focussed given the circumstances surrounding its 
 
 ### Top Level
 
-### snapshot 
+### snapshot
 
-**Purpose**: Creates a migration for each schema, function, table, view, and sstored procedure in the database.
-**Use**: `SchemaCompare snapshot`.
-**parameters**:
-    - datasource string Required The datasource to use
-    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.
+**Purpose**: Creates a migration for each schema, function, table, view, and sstored procedure in the database.  
+**Use**: `SchemaCompare snapshot`.  
+**Parameters**:  
+    - datasource string Required The datasource to use  
+    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
 
 ### compare
 
-**purpose**: Compares between two datasources and creates migrations to bring the schema of the target up to date with the schema of the source.  
-**use**: `SchemaCompare compare`  
+**Purpose**: Compares between two datasources and creates migrations to bring the schema of the target up to date with the schema of the source.  
+**Use**: `SchemaCompare compare`  
 **Parameters**:  
     - sourceDS required string  
     - targetDS required string  
