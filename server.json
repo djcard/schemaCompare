@@ -1,0 +1,8 @@
+{
+    "web":{
+        "host":"testSchemaCompare.local",
+        "http":{
+            "port":"80"
+        }
+    }
+}
