@@ -28,14 +28,14 @@ Note: The tool is highly MSSQL focussed given the circumstances surrounding its 
 
 ### compare
 
-**purpose**: Compares between two datasources and creates migrations to bring the schema of the target up to date with the schema of the source.
-**use**: `SchemaCompare compare`
-**Parameters**:
-    - sourceDS required string
-    - targetDS required string
-    - createmigrations boolean optional Defaults to true
-    - type string optional `full | table`. Defaults to `full`
-    - table string optional The name of the table to compare in a table type comparison.
-    - excludeSchemas array optional The names of schemas to skip when comparing. Defaults to `['sys', 'INFORMATION_SCHEMA', 'tmp']`
-    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.
+**purpose**: Compares between two datasources and creates migrations to bring the schema of the target up to date with the schema of the source.  
+**use**: `SchemaCompare compare`  
+**Parameters**:  
+    - sourceDS required string  
+    - targetDS required string  
+    - createmigrations boolean optional Defaults to true  
+    - type string optional `full | table`. Defaults to `full`  
+    - table string optional The name of the table to compare in a table type comparison.  
+    - excludeSchemas array optional The names of schemas to skip when comparing.Defaults to `['sys', 'INFORMATION_SCHEMA', 'tmp']`  
+    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
 
