@@ -19,15 +19,9 @@ component {
         type = 'full',
         excludeSchemas = ['sys', 'INFORMATION_SCHEMA', 'tmp'],
         createMigrations = true,
-        string path = getCwd() & "/resources/database/migrations",
+        string outputPath = getCwd() & "/resources/database/migrations",
         tableName = ''
     ) {
-        var pather = arguments.path.len()
-         ? arguments.path
-         : variables.settings.modules.schemaCompare.migrationDirectory.len()
-         ? variables.settings.modules.schemaCompare.migrationDirectory
-         : '';
-
 
         if (type == 'full') {
             var results = support.fullCompare(
@@ -35,7 +29,7 @@ component {
                 targetDs,
                 excludeSchemas,
                 createMigrations,
-                pather
+                outputPath
             );
         } else if (type == 'TABLE') {
             if (!tableName.len()) {
@@ -46,7 +40,7 @@ component {
                 sourceds,
                 targetDs,
                 createMigrations,
-                pather
+                outputPath
             )
         }
     }
