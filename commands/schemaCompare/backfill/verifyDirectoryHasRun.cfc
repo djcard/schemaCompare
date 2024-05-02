@@ -13,7 +13,7 @@ component {
     property name="support" inject="support@schemaCompare";
     property name="print" inject="printBuffer";
 
-    function run(required string directory, required string datasource, boolean unRunOnly = false) {
+    function run( required string datasource, string directory= getCwd() & '/resources/database/migrations',  boolean unRunOnly = false) {
         var allFiles = directoryList(expandPath(arguments.directory));
         var allreadyRun = support.obtainAlreadyRan(arguments.datasource);
 

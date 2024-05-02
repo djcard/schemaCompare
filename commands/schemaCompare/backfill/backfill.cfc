@@ -10,8 +10,8 @@ component accessors="true" {
 
     property name="support" inject="support@schemaCompare";
 
-    function run(required string dataSourceName, required string path, boolean displayAll = false) {
-        var allMigrations = directoryList(path = expandPath(arguments.path), type = 'file', filter = '*.cfc');
+    function run(required string dataSourceName, string sourcePath = getCwd() & '/resources/database/migrations', boolean displayAll = false) {
+        var allMigrations = directoryList(path = expandPath(arguments.sourcePath), type = 'file', filter = '*.cfc');
 
         var alreadyIn = support.obtainAlreadyRan(arguments.dataSourceName);
 

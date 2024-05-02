@@ -1,6 +1,6 @@
 /***
  * Creates a migration with a "catchup" script. i.e. migrations that are present but need to be listed as run on a database to which there is no direct access except a migration. Similar to backfill
- * @path The directory with the existing migrations
+ * @sourcePath The directory with the existing migrations
  * @datasourceName The datasource to use
  * @outputpath Where to write the migration with the catchup script *
  *
@@ -11,8 +11,8 @@ component {
     property name="support" inject="support@schemaCompare";
 
 
-    function run(required string path, required string dataSourceName, string outputPath = '') {
-        var allMigrations = directoryList(path = expandPath(arguments.path), type = 'file', filter = '*.cfc');
+    function run( string sourcePath = getCwd() & '/resources/database/migrations', string outputPath = getCwd() & '/resources/database/migrations') {
+        var allMigrations = directoryList(path = expandPath(arguments.sourcePath), type = 'file', filter = '*.cfc');
         var wholeScript = []
 
         var wholeScript = allMigrations.map((item) => {
