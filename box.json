@@ -1,17 +1,17 @@
 {
     "author":"Dan Card",
-    "bugs":"",
+    "bugs":"https://github.com/djcard/schemaCompare/issues",
     "changelog":"",
     "contributors":[],
     "dependencies":{
         "commandbox-cbdatasource":"0.0.2"
     },
-    "description":"",
+    "description":"A collection of tools to faciliate keeping a database in sync with migrations and to help play `catch up` to get a process back on track with migrations. ",
     "devDependencies":{
         "testbox":"be"
     },
-    "documentation":"",
-    "homepage":"",
+    "documentation":"https://github.com/djcard/schemaCompare",
+    "homepage":"https://github.com/djcard/schemaCompare",
     "ignore":[
         "**/.*",
         "/test/",
@@ -33,13 +33,13 @@
     "location":"ForgeboxStorage",
     "name":"Schema Compare",
     "private":false,
-    "projectURL":"",
+    "projectURL":"https://github.com/djcard/schemaCompare",
     "reinitWatchDelay":500,
     "reinitWatchDirectory":"",
     "reinitWatchPaths":"",
     "repository":{
-        "type":"",
-        "URL":""
+        "type":"git",
+        "URL":"https://github.com/djcard/schemaCompare"
     },
     "scripts":{},
     "shortDescription":"A tool to compare schemas and create scema migrations based on those changes.",
@@ -65,5 +65,5 @@
         "watchPaths":"**.cfc"
     },
     "type":"commandbox-modules",
-    "version":"0.0.1"
+    "version":"0.0.2"
 }
