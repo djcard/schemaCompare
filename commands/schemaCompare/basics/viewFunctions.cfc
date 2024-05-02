@@ -12,7 +12,7 @@ component accessors="true" {
     property name="support" inject="support@schemaCompare";
     property name="print" inject="printBuffer";
 
-    function run(required string datasource = 'target', string name = '') {
+    function run(required string datasource, string name = '') {
         var allFunctions = support.obtainFunctions(arguments.datasource, name);
         print.line('There are #allFunctions.len()# functions in #arguments.datasource#');
         if (name.len()) {

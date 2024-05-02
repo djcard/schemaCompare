@@ -8,7 +8,7 @@
 component {
 
     property name="support" inject="support@schemaCompare";
-    function run(filePath = '', path = '', outputPath = 'c:\tempcfc') {
+    function run(filePath = '', outputPath = = getcwd() & 'resources/database/migrations') {
         var rawText = '';
         var name = filePath.listlast('/\');
         if (filePath.len() and fileExists(filePath)) {

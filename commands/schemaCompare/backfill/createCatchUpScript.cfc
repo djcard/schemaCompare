@@ -2,9 +2,9 @@
  * Creates a migration with a "catchup" script. i.e. migrations that are present but need to be listed as run on a database to which there is no direct access except a migration. Similar to backfill
  * @path The directory with the existing migrations
  * @datasourceName The datasource to use
- * @outputpath Where to write the migration with the catchup script * 
- * 
- * 
+ * @outputpath Where to write the migration with the catchup script *
+ *
+ *
  * **/
 component {
 

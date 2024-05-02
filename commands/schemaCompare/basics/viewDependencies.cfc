@@ -3,7 +3,7 @@
  *
  * @objectName The name of the object whose dependencies are desired
  * @datasource The datasource to use
- * 
+ *
  *
  * */
 
@@ -17,7 +17,7 @@ component {
         print.table(data = isDependentOn)
 
         var isADependencyOf = support.whatReferencesMe(objectName, datasource);
-        print.line("");
+        print.line('');
         print.line('These items depend on #objectName#');
         print.table(isADependencyOf);
     }

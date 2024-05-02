@@ -19,10 +19,9 @@ component {
         type = 'full',
         excludeSchemas = ['sys', 'INFORMATION_SCHEMA', 'tmp'],
         createMigrations = true,
-        string outputPath = getCwd() & "/resources/database/migrations",
+        string outputPath = getCwd() & '/resources/database/migrations',
         tableName = ''
     ) {
-
         if (type == 'full') {
             var results = support.fullCompare(
                 sourceds,

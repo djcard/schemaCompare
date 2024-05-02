@@ -1,12 +1,12 @@
 /***
  * Comnpares the migrations in a directory to see if they have been run on a datasource already or not.
- * 
+ *
  * @directory The path to teh directory with the list of migrations to check
  * @datasource The datasource to use
  * @unRunOnly To display only the migrations which have not been run vs vs the status of all migrations in the directory
- * 
- * 
- * 
+ *
+ *
+ *
  * */
 component {
 

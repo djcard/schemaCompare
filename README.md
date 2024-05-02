@@ -23,19 +23,67 @@ Note: The tool is highly MSSQL focussed given the circumstances surrounding its 
 **Purpose**: Creates a migration for each schema, function, table, view, and sstored procedure in the database.  
 **Use**: `SchemaCompare snapshot`.  
 **Parameters**:  
-    - datasource string Required The datasource to use  
-    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
+    - datasource Required string The datasource to use  
+    - outputPath Optional string The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
 
 ### compare
 
 **Purpose**: Compares between two datasources and creates migrations to bring the schema of the target up to date with the schema of the source.  
 **Use**: `SchemaCompare compare`  
 **Parameters**:  
-    - sourceDS required string  
-    - targetDS required string  
-    - createmigrations boolean optional Defaults to true  
-    - type string optional `full | table`. Defaults to `full`  
-    - table string optional The name of the table to compare in a table type comparison.  
-    - excludeSchemas array optional The names of schemas to skip when comparing.Defaults to `['sys', 'INFORMATION_SCHEMA', 'tmp']`  
-    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
+    - sourceDS Required string  
+    - targetDS Required string  
+    - createmigrations boolean Optional Defaults to true  
+    - type Optional string `full | table`. Defaults to `full`  
+    - table Optional string  The name of the table to compare in a table type comparison.  
+    - excludeSchemas array Optional The names of schemas to skip when comparing.Defaults to `['sys', 'INFORMATION_SCHEMA', 'tmp']`  
+    - outputPath Optional string The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
+
+### configure datasource
+
+**Purpose**: Configures a datasource for use within CommandBox and has options to save default grammar for QB and to publish datasource to a .env file  
+**Use**: `schemaCompare configure datasource`  
+**Parameters**:  
+    - none but presents a "wizard". Should be refactored to simply accept paramters
+
+
+### wrap directory
+
+**Purpose**: scans a directory for files with .sql extensions and "wraps" them in a migration with some minimal changes to make them migration friendly. Note: changes based on scripts exported from MSSQL Studio.  
+**Use**: `schemaCompare wrap directory`  
+**Parameters**:  
+    - sourcePath Required string The directory to be scanned and wrapped
+    - outputPath Optional string The target location for migrations. Defaults to /resources/database/migrations under the current folder.  
+
+### wrap file
+
+**Purpose**: accepts a file with .sql extensions and "wraps" it in a migration with some minimal changes to make them migration friendly. Note: changes based on scripts exported from MSSQL Studio.  
+**Use**: `schemaCompare wrap file`  
+**Parameters**:  
+    - filePath Required string Absolute path to the file to be wrapped
+    - outputPath string Optional The target location for migrations. Defaults to /resources/database/migrations under the current folder. 
+
+### basics viewComputerFields
+
+**Purpose**: Displays a table with the computed fields in a table / database  
+**Use**: `schemaCompare basics viewComputedFields`  
+**Parameters**:  
+    - datasource Required string The datasource to use   
+
+
+### basics viewFunctions
+
+**Purpose**: Displays a table with the functions in a database  
+**Use**: `schemaCompare basics viewFunctions`  
+**Parameters**:  
+    - datasource string Required The datasource to use  
+    - name string Optional If a name is submitted, a more detailed output is displayed of that single function.  
+
+### basics viewDependencies
+
+**Purpose**: Presents a table of dependencies and what is dependent on the submitted object name.
+**Use**: `schemaCompare basics viewDependencies`  
+**Paramters**:  
+    - objectName Required string The name of the object in question.  
+    - datasource Required string The name of the datasource to use.  
 

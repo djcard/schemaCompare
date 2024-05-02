@@ -12,9 +12,9 @@ component {
     property name="support" inject="support@schemaCompare";
 
     function run(required string datasource, string outputPath = getcwd() & '/resources/database/migrations') {
-        print.line("Checking if #outputpath# exists").toConsole();
+        print.line('Checking if #outputpath# exists').toConsole();
         support.allDirectoriesMade(outputPath);
-        print.line("Checking if #outputpath# exists or was created").toConsole();
+        print.line('Checking if #outputpath# exists or was created').toConsole();
         // Create All Schemas
         print.lineGreen('Starting Schemas');
         support.createSchemaMigrations(datasource = arguments.datasource, outputPath = arguments.outputPath);
